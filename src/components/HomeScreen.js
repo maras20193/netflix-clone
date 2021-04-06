@@ -22,8 +22,8 @@ const HomeScreen = () => {
       title='Top Rated'
       fetchUrl={requests.fetchTopRated}/>
       <Row 
-      title='Action Movies'
-      fetchUrl={requests.fetchActionMovies}/>
+      title='Adventure Movies'
+      fetchUrl={requests.fetchAdventureMovies}/>
       <Row 
       title='Comedy Movies'
       fetchUrl={requests.fetchComedyMovies}/>

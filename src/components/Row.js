@@ -20,6 +20,8 @@ const Row = ({ title, fetchUrl, isLargeRow = false}) => {
     console.log(movies)
   },[fetchUrl])
 
+  console.log(movies)
+
   const moviesImg = movies.map(movie => {
     return (
       ((isLargeRow && movie.poster_path) || (!isLargeRow && movie.backdrop_path)) && 

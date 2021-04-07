@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,6 +8,8 @@ import {
 import './App.css';
 import HomeScreen from './components/screens/HomeScreen'
 import LoginScreen from './components/screens/LoginScreen'
+import { auth } from './firebase';
+
 
 
 
@@ -15,20 +17,30 @@ function App() {
 
   const user = null;
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      if (userAuth){
+
+      } else {
+
+      }
+
+      return unsubscribe;
+    })
+  }, [])
+
   return (
     <div className="app">
       <Router>
-        {!user 
-        ? (
-          <LoginScreen/>
-        )
-        : (<Switch>
+        {!user ? (
+          <LoginScreen/>)
+        : (
+          <Switch>
             <Route exact path="/">
               <HomeScreen />
             </Route>
-    </Switch>
+          </Switch>
         )}
-
     </Router>
     </div>         
   );

@@ -26,6 +26,10 @@
   border: none;
   outline: none;
   cursor: pointer;
+  transition: 0.2s;
+}
+.loginScreen__button:hover {
+  opacity: 0.9;
 }
 .loginScreen__gradient {
   width: 100%;
@@ -43,11 +47,11 @@
 .loginScreen__body {
   position: absolute;
   width: 100%;
-  top: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
   padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
 
   z-index: 1;
@@ -91,4 +95,10 @@
   border: none;
   color: white;
   cursor: pointer;
+  outline: none;
+  transition: 0.2s;
+}
+
+.loginScreen__inputButton:hover {
+  opacity: 0.9;
 }

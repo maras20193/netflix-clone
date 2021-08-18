@@ -11,6 +11,7 @@ import LoginScreen from './components/screens/LoginScreen'
 import { auth } from './firebase';
 import { useDispatch, useSelector} from 'react-redux' 
 import { LOGIN, LOGOUT, selectUser } from './userSlice';
+import ProfileScreen from './components/screens/ProfileScreen'
 
 
 
@@ -28,12 +29,12 @@ function App() {
           email: userAuth.email
         }))
       } else {
-        dispatch(LOGOUT)
+        dispatch(LOGOUT())
       }
 
       return unsubscribe;
     })
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="app">
